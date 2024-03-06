@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @keyframes pop-right {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pop-left {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pop-down {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-away {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+
+        .animate-pop-right {
+            animation: pop-right 1s ease forwards;
+        }
+
+        .animate-pop-left {
+            animation: pop-left 1s ease forwards;
+        }
+
+        .animate-pop-down {
+            animation: pop-down 1s ease forwards;
+        }
+        
+        .animate-fade-away {
+            animation: fade-away 1s ease forwards;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("welcome").style.animationDelay = 1500 + "ms";
+            document.getElementById("welcome").classList.add("animate-fade-away");
+            document.getElementById("cover").style.animationDelay = 100 + "ms";
+            document.getElementById("cover").classList.add("animate-pop-right");
+            document.getElementById("mphoto").style.animationDelay = 600 + "ms";
+            document.getElementById("mphoto").classList.add("animate-pop-left");
+            document.getElementById("tab").style.animationDelay = 1100 + "ms";
+            document.getElementById("tab").classList.add("animate-pop-down");
+            document.getElementById("content").style.animationDelay = 1100 + "ms";
+            document.getElementById("content").classList.add("animate-pop-down");
+            var tabLinks = document.querySelectorAll('.nav-link');
+            tabLinks.forEach(function (tabLink) {
+                tabLink.addEventListener('click', function () {
+                    window.scrollTo(0, 650);
+                });
+            });
+        });
+    </script>
+    <title>E-portfolio</title>
+</head>
+
+<body data-bs-theme="dark">
+    <div class="container-fluid text-center" style="padding:100px 20px;">
+        <h1 id="welcome">Welcome to my website</h1>
+        <div class="row">
+            <div class="col text-center" id="cover" style="margin-top: 100px;opacity: 0;">
+                <h1>Hello<br>
+                <br>I am Lam Kai Yeung
+                </h1>
+            </div>
+            <div class="col text-center" id="mphoto" style="opacity: 0;">
+                <img src="https://lwl220386265.github.io/SDDphoto/2lEh26ilDa6B7O67.jpg" style="width: 300px;height: 400px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid vh-100">
+        <div class="nav nav-tabs" id="tab" style="opacity: 0;">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#About">About me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#Career">Career Goal & Plan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#Development">Continuous Development</a>
+            </li>
+        </div>
+
+        <div class="tab-content" id="content" style="opacity: 0;">
+            <div class="tab-pane container active" id="About" style="padding-top: 50px;">
+                <h1>About me</h1>
+                <hr>
+                <p style="font-size: large;">
+                    I am Lam Kai Yeung. I graduated for Hong Kong Insititute of Vocational Education with a Higher
+                    Diploma in Software Engineering. During my studies, I developed a deep passion for programming and
+                    problem-solving.
+                </p>
+            </div>
+            <div class="tab-pane container fade" id="Career" style="padding-top: 50px;">
+                <h1>Career Goal & Plan</h1>
+                <hr>
+                <p style="font-size: large;">
+                    As a graduate form Software Engineering, my career goal is to become a senior software engineer. To achieve 
+                    this, I will focus on continuous learning and skill development by staying updated with the latest programming languages, 
+                    frameworks, and tools.
+                </p>
+                <p style="font-size: large;">
+                    Also, I will like to buliding interpersonal relationship with other experienced software 
+                    engineers by attend industry events, join online communities, and connect them.
+                </p>
+                <p style="font-size: large;">
+                    Lastly, I will consider to studing a bachelor's degree and related advanced certification. This can 
+                    demonstrate my commitment to continuous learning and add credibility to my skillset.
+                </p>
+                <hr>
+                <h1 class="text-center">My Work</h1>
+                <div class="container-fluid text-center w-75">
+                    <div id="work" class="carousel slide">
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://lwl220386265.github.io/SDDphoto/work1.PNG" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://lwl220386265.github.io/SDDphoto/work2.PNG" class="d-block w-100">
+                        </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#work" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#work" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane container fade" id="Development" style="padding-top: 50px;">
+                <h1>Continuous Development</h1>
+                <hr>
+                <p style="font-size: large;">
+                    In my free time, I like biking and drawing, both of them can help me to relax and get achievement. 
+                    For continuou development, beside biking and drawing in my space time, I also want to learning more 
+                    knowledge about both of the hobby by join course and reading related books. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
